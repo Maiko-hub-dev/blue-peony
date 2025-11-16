@@ -1,0 +1,352 @@
+@use "../global/" as *;
+
+
+.main-visual {
+    width: 100%;
+    height: 100vh;
+    padding: 2.0625rem 0 0 0.625rem;
+    @include mq("md"){
+        padding-left: 17.5rem;
+    }
+}
+.main-visual__inner{
+    padding: 0 0.625rem;
+    width: 100%;
+    height: inherit;
+    background: url('../images/first-view-sp.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 4.3125rem;
+    border-radius: 10px 0 0 10px;
+    @include mq("md"){
+        background: none;
+        margin-top: 0;
+    }
+}
+
+.main-visual__rightbox {
+    @include mq("md"){
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $blue;
+    z-index: 0;
+    width: 50%;
+    height: 50%;
+    max-width: 45.4375rem;
+    max-height: 45.4375rem;
+    }
+}
+
+.main-visual__container {
+    position: relative;
+    width: 100%;
+    height: inherit;
+    
+    @include mq("md"){
+        background-color: $content;
+        padding: 2.5em 2.5em 2.5em 0;
+        border-radius: 50px;
+        height: 100vh;
+        z-index: 22;
+    }
+}
+.main-visual__titles{
+    position: absolute;
+    width: inherit;
+    z-index: 2;
+    bottom: 7.5rem;
+    @include mq("sp"){
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; // ← 右寄せ
+    bottom: initial;
+    }
+}
+.main-visual__title{
+    @include mq("sp"){
+        position: relative;
+    }
+    @include mq("md"){
+        width: 33.75rem;
+        right: -2rem;
+        max-width: 100%; 
+    }
+}
+.main-visual__catch {
+    background-color: $white;
+    border-radius: 0.625rem;
+    color: $black;
+    font-size: 1.5rem;
+    font-family: $base-font;
+    font-weight: $bold;
+    padding: 0.875rem;
+    text-align: left;
+    position: absolute;
+    bottom: 8.0625rem;
+    left: 1.1875rem;
+    @include mq("sp"){
+        font-size: 2rem;
+        word-break: break-all;
+        width: inherit;
+        right: 0;
+    }
+    @include mq("md"){
+        padding-left: 1rem;
+        left: auto;
+        font-size: 4rem;
+        padding: 0.875rem;
+    }
+}
+.members {
+    height: inherit;
+    @include mq("md"){
+    width: 100%;
+    height: 100%;
+    }
+}
+.main-visual__text{
+    position: absolute;
+    right: 7.0625rem;
+    bottom: 3.75rem;
+    left: 1.1875rem;
+    color: $black;
+    font-size: 0.75rem;
+    font-weight: $bold;
+    margin-top: 1.3125rem;
+    letter-spacing: 0.04em;
+    line-height: 2;
+    @include mq("sp"){
+        right: 0;
+    }
+    @include mq("md"){
+        padding-left: 1rem;
+        left: auto;
+        width: inherit;
+        margin-top: 2.1875rem;
+        font-size: 1rem;
+    }
+}
+.members__img{
+    position: relative;
+    display: none;
+    @include mq("md"){
+        display: block;
+        position: absolute;
+        transition: all 0.8s ease-in-out;
+    }
+} 
+
+.members .members__img.open{
+    @include mq("md"){
+    }
+}
+
+.members .members__dream{
+    background: url("../images/dream-house.svg");
+    background-size: 6.875rem 9.1875rem;
+    background-repeat: no-repeat;
+    @include mq("sp"){
+        background-size: 10rem 13.3635rem;
+    }
+    @include mq("md"){
+        // background-size: 19.625rem 26rem;
+        background-size: contain;
+        bottom: -1rem;
+        left: -1rem;
+    }
+}
+
+.members .members__dream {
+    width: 6.875rem;
+    height: 9.1875rem;
+    @include mq("sp"){
+        width: 7.5rem;
+        height: 10.5rem;
+    }
+    @include mq("md"){
+  width: 28.03571429%;
+  height: 47.65177549%;
+}
+}
+
+.members .members__dream.open {
+    @include mq("md"){
+        bottom: 3.1875rem;
+        left: 5.4375rem;
+    }
+}
+.members .members__plan{
+    width: 8.375rem;
+    height: 8.8175rem;
+    @include mq("md"){
+        width: 22.85714%;
+        height: 22.86%;
+    }
+}
+.members .members__plan{
+    background: url("../images/home-loan-application.svg");
+    background-repeat: no-repeat;
+    background-size: none;
+    background-position: right center;
+    @include mq("sp"){
+        background-size: contain;
+        aspect-ratio: 256/ 252;
+    }
+    @include mq("md"){
+        top: -1rem;
+        right: -1rem;
+    }
+}
+.members .members__plan.open {
+    @include mq("md"){
+        top: 4rem;
+        right: 3.4375rem;
+    }
+}
+//. ここまでCSSで指定
+.members .members__homeloan{
+    width: 6.4375rem;
+    height: 7.7375rem;
+    @include mq("md"){
+        min-width: 17.4%;
+        height: 25.4%;
+    }
+}
+.members .members__homeloan{
+    background: url("../images/planning_01.svg");
+    background-repeat: no-repeat;
+    background-size: 6.4375rem 7.7375rem ;
+    background-position: center;
+    @include mq("md"){
+    top: -1rem;
+    left: -1rem;
+    }
+}
+.members .members__homeloan.open{
+    @include mq("sp"){
+        background-size: contain;
+    }
+    @include mq("md"){
+        margin-top: 4.0625rem;
+        left: 4.4375rem;
+    }
+}
+.members .members__estimate{
+    width: 5.5rem;
+    height: 6.3125rem;
+    @include mq("md"){
+        width: 10.125rem;
+        height: 11.6875rem;
+    }
+}
+.members .members__estimate{
+    background: url("../images/estimate.svg");
+    background-repeat: no-repeat;
+    background-size: 88px 101px;
+    background-position: center;
+    @include mq("md"){
+        background-size: 162px 187px;
+        bottom: -1rem;
+        right: -1rem;
+    }
+}
+.members .members__estimate.open{
+    @include mq("md"){
+        right: 3.5rem;
+        bottom: 18.5rem;
+    }
+}
+.members .members__screen {
+    width: 5.125rem;
+    height: 5.875rem;
+    @include mq("sp"){
+        width: 7.5rem;
+        height: 8.5995rem;
+    }
+    @include mq("md"){
+        width: 18.39285714%;
+        height: 26.88%;
+    }
+
+}
+.members .members__img.members__screen {
+    background: url("../images/loan-screening.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    @include mq("md"){
+        top: 0;
+        left: 50%;
+        transform: scale(0.8);
+        transform: translateX(-50%);
+        transform: translateY(-100%);
+        transition-duration: transform 1s ease-in-out;
+    }
+}
+.members .members__screen.open{
+    @include mq("md"){
+        transform: scale(1);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.main-visual__scroll{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $blue;
+    font-family: $base-font;
+}
+/* スクロールダウンの位置 */
+.scroll {
+        position: absolute;
+        bottom: 1.1875rem;
+        @include mq("md"){
+            z-index: 100;
+            margin-left: -1rem;
+        }
+}
+/* 線のアニメーション部分 */
+.scroll::before {
+  animation: scroll 2s infinite;
+  background-color: $blue;
+  content: "";
+  bottom: -3.25rem;
+  height: 3.25rem;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 1px;
+  @include mq("md"){
+    bottom: -7rem;
+    height: 7rem;
+  }
+}
+/* 線のアニメーション */
+@keyframes scroll {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+  50% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+  51% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+  100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }
+}
+.scroll__text{
+    letter-spacing: 0.04em;
+    margin-left: rem(9);
+    margin-bottom: 0.5rem;
+}
