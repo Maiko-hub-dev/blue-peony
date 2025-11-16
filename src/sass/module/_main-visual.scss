@@ -20,6 +20,7 @@
     margin-top: 4.3125rem;
     border-radius: 10px 0 0 10px;
     @include mq("md"){
+        padding: 0 2.5rem;
         background: none;
         margin-top: 0;
     }
@@ -43,6 +44,9 @@
     position: relative;
     width: 100%;
     height: inherit;
+    @include mq("sp"){
+        padding: 0.75rem 0.75rem 0.75rem 0;
+    }
     
     @include mq("md"){
         background-color: $content;
@@ -53,25 +57,27 @@
     }
 }
 .main-visual__titles{
-    position: absolute;
-    width: inherit;
-    z-index: 2;
-    bottom: 7.5rem;
-    @include mq("sp"){
-    position: relative;
+    position: static;
     width: 100%;
     display: flex;
-    justify-content: flex-end; // ← 右寄せ
-    bottom: initial;
+    z-index: 2;
+    justify-content: flex-start;
+    bottom: auto;
+    @include mq("sp"){
+        display: block;
+        width: 100%;
+        bottom: initial;
     }
+    @include mq("md"){
+            justify-content: flex-end; // ← 右寄せ
+        }
 }
 .main-visual__title{
     @include mq("sp"){
-        position: relative;
+        position: static;
     }
     @include mq("md"){
-        width: 33.75rem;
-        right: -2rem;
+        width: 100%;
         max-width: 100%; 
     }
 }
@@ -79,26 +85,40 @@
     background-color: $white;
     border-radius: 0.625rem;
     color: $black;
+    position: static;
     font-size: 1.5rem;
     font-family: $base-font;
     font-weight: $bold;
-    padding: 0.875rem;
+    padding: 0.875rem ;
     text-align: left;
-    position: absolute;
-    bottom: 8.0625rem;
-    left: 1.1875rem;
+    bottom: max(5%,8.0625rem);
+    width: fit-content;
+    // margin-left: 1.1875rem;
     @include mq("sp"){
-        font-size: 2rem;
+        position: absolute;
+        left: auto;
+        padding: 0.875rem 1rem;
         word-break: break-all;
-        width: inherit;
-        right: 0;
     }
     @include mq("md"){
-        padding-left: 1rem;
         left: auto;
+        padding-left: 1rem;
         font-size: 4rem;
-        padding: 0.875rem;
+        right: 1.1875rem;
+        bottom: 8.0625rem;
     }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  .main-visual__catch {
+    white-space: nowrap;   // ★ 改行しない
+    font-size: 2.5rem;       // ★ ここで指定
+    text-align: center;
+    left: auto;
+    // left: 1.1875rem;
+    right: 1.1875rem;
+    width: 90%;
+
+  }
 }
 .members {
     height: inherit;
@@ -108,25 +128,45 @@
     }
 }
 .main-visual__text{
-    position: absolute;
-    right: 7.0625rem;
-    bottom: 3.75rem;
-    left: 1.1875rem;
+    position: static;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem 0;
+    margin-top: 0.5rem;
     color: $black;
     font-size: 0.75rem;
+    line-height: 1.8;
+    text-align: left;
     font-weight: $bold;
-    margin-top: 1.3125rem;
+    width: inherit;
     letter-spacing: 0.04em;
-    line-height: 2;
     @include mq("sp"){
-        right: 0;
+        width: fit-content;
+        right: 7.0625rem;
+        margin-top: 1.3125rem;
+        line-height: 2;
+        bottom: -1rem;
+        left: 1.1875rem;
+        right: 0.25rem;
     }
     @include mq("md"){
-        padding-left: 1rem;
+        position: absolute;
+        padding-left: max(1.5rem,10%);
         left: auto;
-        width: inherit;
-        margin-top: 2.1875rem;
+        bottom: min(2.5rem, 3%);
+        margin-top: 1.1875rem;
         font-size: 1rem;
+        right: 3.1875rem;
+    }
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+    .main-visual__text {
+        font-size: 0.875rem;       // ★ ここで指定
+        right: 3.1875rem;
+        bottom: 0.875rem;
     }
 }
 .members__img{

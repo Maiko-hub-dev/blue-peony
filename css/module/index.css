@@ -235,6 +235,7 @@
 }
 @media screen and (min-width: 768px) {
   .main-visual__inner {
+    padding: 0 2.5rem;
     background: none;
     margin-top: 0;
   }
@@ -259,6 +260,11 @@
   width: 100%;
   height: inherit;
 }
+@media screen and (min-width: 375px) {
+  .main-visual__container {
+    padding: 0.75rem 0.75rem 0.75rem 0;
+  }
+}
 @media screen and (min-width: 768px) {
   .main-visual__container {
     background-color: #f8f8f8;
@@ -270,36 +276,41 @@
 }
 
 .main-visual__titles {
-  position: absolute;
-  width: inherit;
+  position: static;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   z-index: 2;
-  bottom: 120px;
-  bottom: 7.5rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  bottom: auto;
 }
 @media screen and (min-width: 375px) {
   .main-visual__titles {
-    position: relative;
+    display: block;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    bottom: auto;
+    bottom: initial;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-visual__titles {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    bottom: auto;
-    bottom: initial;
   }
 }
 
 @media screen and (min-width: 375px) {
   .main-visual__title {
-    position: relative;
+    position: static;
   }
 }
 @media screen and (min-width: 768px) {
   .main-visual__title {
-    width: 33.75rem;
-    right: -2rem;
+    width: 100%;
     max-width: 100%;
   }
 }
@@ -308,6 +319,7 @@
   background-color: #ffffff;
   border-radius: 0.625rem;
   color: #000000;
+  position: static;
   font-size: 24px;
   font-size: 1.5rem;
   font-family: "Zen Kaku Gothic New", sans-serif;
@@ -315,29 +327,40 @@
   padding: 14px;
   padding: 0.875rem;
   text-align: left;
-  position: absolute;
-  bottom: 129px;
-  bottom: 8.0625rem;
-  left: 19px;
-  left: 1.1875rem;
+  bottom: max(5%, 129px);
+  bottom: max(5%, 8.0625rem);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media screen and (min-width: 375px) {
   .main-visual__catch {
-    font-size: 2rem;
+    position: absolute;
+    left: auto;
+    padding: 0.875rem 1rem;
     word-break: break-all;
-    width: inherit;
-    right: 0;
   }
 }
 @media screen and (min-width: 768px) {
   .main-visual__catch {
-    padding-left: 1rem;
     left: auto;
+    padding-left: 1rem;
     font-size: 4rem;
-    padding: 0.875rem;
+    right: 1.1875rem;
+    bottom: 8.0625rem;
   }
 }
 
+@media (min-width: 768px) and (max-width: 1180px) {
+  .main-visual__catch {
+    white-space: nowrap;
+    font-size: 2.5rem;
+    text-align: center;
+    left: auto;
+    right: 1.1875rem;
+    width: 90%;
+  }
+}
 .members {
   height: inherit;
 }
@@ -349,37 +372,57 @@
 }
 
 .main-visual__text {
-  position: absolute;
-  right: 113px;
-  right: 7.0625rem;
-  bottom: 60px;
-  bottom: 3.75rem;
-  left: 19px;
-  left: 1.1875rem;
+  position: static;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  display: block;
+  width: 100%;
+  padding: 8px 16px 0;
+  padding: 0.5rem 1rem 0;
+  margin-top: 8px;
+  margin-top: 0.5rem;
   color: #000000;
   font-size: 12px;
   font-size: 0.75rem;
+  line-height: 1.8;
+  text-align: left;
   font-weight: 700;
-  margin-top: 21px;
-  margin-top: 1.3125rem;
+  width: inherit;
   letter-spacing: 0.04em;
-  line-height: 2;
 }
 @media screen and (min-width: 375px) {
   .main-visual__text {
-    right: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    right: 7.0625rem;
+    margin-top: 1.3125rem;
+    line-height: 2;
+    bottom: -1rem;
+    left: 1.1875rem;
+    right: 0.25rem;
   }
 }
 @media screen and (min-width: 768px) {
   .main-visual__text {
-    padding-left: 1rem;
+    position: absolute;
+    padding-left: max(1.5rem, 10%);
     left: auto;
-    width: inherit;
-    margin-top: 2.1875rem;
+    bottom: min(2.5rem, 3%);
+    margin-top: 1.1875rem;
     font-size: 1rem;
+    right: 3.1875rem;
   }
 }
 
+@media (min-width: 768px) and (max-width: 1180px) {
+  .main-visual__text {
+    font-size: 0.875rem;
+    right: 3.1875rem;
+    bottom: 0.875rem;
+  }
+}
 .members__img {
   position: relative;
   display: none;
@@ -1391,6 +1434,7 @@
 @media screen and (min-width: 768px) {
   .about__subtitle {
     font-size: 2.5rem;
+    padding: 1rem 2.5rem;
     width: 10.74rem;
     right: min(8.874rem, 6%);
     letter-spacing: 0.1em;

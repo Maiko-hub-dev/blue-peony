@@ -45,6 +45,7 @@
   letter-spacing: 0.04em;
   @include mq("md"){
     font-size: 2.5rem;
+    padding: 1rem 2.5rem;
     width: 10.74rem;
     right: min(8.874rem, 6%);
     letter-spacing: 0.1em;
