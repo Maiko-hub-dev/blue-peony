@@ -59,12 +59,12 @@
 .main-visual__titles{
     position: static;
     width: 100%;
-    display: flex;
+    display: block;
     z-index: 2;
-    justify-content: flex-start;
     bottom: auto;
     @include mq("sp"){
-        display: block;
+        display: flex;
+        justify-content: flex-start;
         width: 100%;
         bottom: initial;
     }
@@ -74,6 +74,8 @@
 }
 .main-visual__title{
     @include mq("sp"){
+        padding: 0 0.5rem;
+        text-align: left;
         position: static;
     }
     @include mq("md"){
@@ -92,7 +94,8 @@
     padding: 0.875rem ;
     text-align: left;
     bottom: max(5%,8.0625rem);
-    width: fit-content;
+    display: inline-block;
+    width: auto;
     // margin-left: 1.1875rem;
     @include mq("sp"){
         position: absolute;
@@ -112,11 +115,9 @@
   .main-visual__catch {
     white-space: nowrap;   // ★ 改行しない
     font-size: 2.5rem;       // ★ ここで指定
-    text-align: center;
     left: auto;
     // left: 1.1875rem;
     right: 1.1875rem;
-    width: 90%;
 
   }
 }
@@ -128,19 +129,20 @@
     }
 }
 .main-visual__text{
-    position: static;
+    position: absolute;
+    // position: static;
     right: auto;
-    bottom: auto;
-    left: auto;
+    bottom: 3rem;
+    left: 1.1875rem;
     display: block;
     width: 100%;
-    padding: 0.5rem 1rem 0;
     margin-top: 0.5rem;
     color: $black;
     font-size: 0.75rem;
     line-height: 1.8;
     text-align: left;
     font-weight: $bold;
+    padding: 0.5rem 1rem 0 0;
     width: inherit;
     letter-spacing: 0.04em;
     @include mq("sp"){
@@ -148,12 +150,11 @@
         right: 7.0625rem;
         margin-top: 1.3125rem;
         line-height: 2;
-        bottom: -1rem;
-        left: 1.1875rem;
+        // bottom: -1rem;
         right: 0.25rem;
+        z-index: 11;
     }
     @include mq("md"){
-        position: absolute;
         padding-left: max(1.5rem,10%);
         left: auto;
         bottom: min(2.5rem, 3%);
